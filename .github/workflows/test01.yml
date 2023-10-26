@@ -1,0 +1,17 @@
+name: test01
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-auto:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout tools
+        uses: actions/checkout@v3
+        with:
+          repository: onlinegears/private-ka-tools
+          path: ./private-ka-tools
+      - name: run selenium
+        run:
+          ls -lR
